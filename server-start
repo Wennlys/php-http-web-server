@@ -1,0 +1,27 @@
+#!/usr/bin/php
+
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Source\App\Request;
+use Source\App\Response;
+use Source\App\Server;
+
+array_shift($argv);
+
+if (empty($argv))
+{
+  $port = 80;
+} else {
+  $port = array_shift($argv);
+}
+
+$server = new Server('127.0.0.2', $port);
+
+$server->listen(function(Request $request)
+{
+  echo $request->method() . ' ' . $request->uri() . "\n";
+
+  return new Response('<pre>' . print_r($request, true) . '</pre>');
+});

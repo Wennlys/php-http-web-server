@@ -1,0 +1,20 @@
+{
+  "name": "wennlys/php-http-web-server",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "wennlys",
+      "email": "wennlys@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Source\\": "src/"
+    }
+  },
+  "require": {
+    "ext-sockets": "*"
+  }
+}
